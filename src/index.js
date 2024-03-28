@@ -76,3 +76,11 @@ export function getProgression(startStep, step) {
   progression[randomIndex] = '..';
   return { correctAnswer, progression: progression.join(' ') };
 }
+
+export function checkAnswer(userAnswer, correctAnswer, userName) {
+  if (userAnswer !== correctAnswer) {
+    printErrorQuestionMessage({ userAnswer, correctAnswer, userName });
+    return false;
+  }
+  return true;
+}

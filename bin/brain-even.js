@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import getUserName from '../src/cli.js';
 import {
-  isEven, getUserAnswer, getRandomNumber, GAME_ROUNDS, printErrorQuestionMessage,
+  isEven, getUserAnswer, getRandomNumber, GAME_ROUNDS, checkAnswer,
 } from '../src/index.js';
 
 let isWin = true;
@@ -15,8 +15,7 @@ for (let i = 0; i < GAME_ROUNDS; i += 1) {
 
   const questionMessage = 'Responde "yes" si el número es par, de lo contrario responde "no".';
   const userAnswer = getUserAnswer(questionMessage, randomNumber);
-  if (userAnswer !== correctAnswer) {
-    printErrorQuestionMessage({ userAnswer, correctAnswer, userName });
+  if (!checkAnswer(userAnswer, correctAnswer, userName)) {
     isWin = false;
     break;
   }

@@ -6,7 +6,7 @@ import {
   GAME_ROUNDS,
   getRandomOperator,
   getOperationResult,
-  printErrorQuestionMessage,
+  checkAnswer,
 } from '../src/index.js';
 
 let isWin = true;
@@ -24,8 +24,7 @@ for (let i = 0; i < GAME_ROUNDS; i += 1) {
   const questionValue = `${firstRandomNumber} ${randomOperator} ${secondRandomNumber}`;
   const userAnswer = getUserAnswer(questionMessage, questionValue);
 
-  if (Number(userAnswer) !== correctAnswer) {
-    printErrorQuestionMessage({ userAnswer, correctAnswer, userName });
+  if (!checkAnswer(Number(userAnswer), correctAnswer, userName)) {
     isWin = false;
     break;
   }
