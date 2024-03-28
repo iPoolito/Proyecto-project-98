@@ -54,3 +54,17 @@ export function getGCD(a, b) {
   }
   return num1;
 }
+
+export function getProgression(startStep, step) {
+  const progression = [startStep];
+  let currentValue = startStep;
+  for (let i = 0; i < 10; i += 1) {
+    // eslint-disable-next-line no-unused-vars
+    currentValue += step;
+    progression.push(currentValue);
+  }
+  const randomIndex = Math.floor(Math.random() * progression.length);
+  const correctAnswer = progression[randomIndex];
+  progression[randomIndex] = '..';
+  return { correctAnswer, progression: progression.join(' ') };
+}

@@ -7,3 +7,4 @@
 Brain-Even [Game Rececord](https://asciinema.org/a/DOchknRDbKvGgj68pOS716c54)
 Brain-Calc [Game Rececord](https://asciinema.org/a/xlX9voRmhz0EJzB130jCJ1iNi)
 Brain-GCD [Game Rececord](https://asciinema.org/a/GnWQCYP5ZHPa6xFOP7XMbR3h1)
+Brain-Progression [Game Rececord](https://asciinema.org/a/brq4Y1goLDq59J0FLHrOjTOKn)
