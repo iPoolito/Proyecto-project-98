@@ -8,6 +8,14 @@ export function isEven(number) {
   }
   return 'no';
 }
+
+export function isPrime(number) {
+  if (number % 2 === 0) {
+    return 'no';
+  }
+  return 'si';
+}
+
 export function getRandomNumber(number) {
   return Math.floor(Math.random() * number) + 1;
 }
