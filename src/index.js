@@ -9,7 +9,7 @@ export function isEven(number) {
   return 'no';
 }
 export function getRandomNumber(number) {
-  return Math.floor(Math.random() * number);
+  return Math.floor(Math.random() * number) + 1;
 }
 
 export function getUserAnswer(questionMessage, questionValue) {
@@ -40,4 +40,17 @@ export function getOperationResult(num1, num2, operator) {
 export function printErrorQuestionMessage({ userAnswer, correctAnswer, userName }) {
   console.log(`${userAnswer} es una respuesta incorrecta ;(. La respuesta correcta era '${correctAnswer}'.`);
   console.log(`¡Intentémoslo de nuevo, ${userName}!`);
+}
+
+export function getGCD(a, b) {
+  let num1 = a;
+  let num2 = b;
+  let temporal;
+
+  while (num2 !== 0) {
+    temporal = num2;
+    num2 = num1 % num2;
+    num1 = temporal;
+  }
+  return num1;
 }

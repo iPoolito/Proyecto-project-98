@@ -5,4 +5,5 @@
 ### Records
 
 Brain-Even [Game Rececord](https://asciinema.org/a/DOchknRDbKvGgj68pOS716c54)
-Brain-Even [Game Rececord](https://asciinema.org/a/xlX9voRmhz0EJzB130jCJ1iNi)
+Brain-Calc [Game Rececord](https://asciinema.org/a/xlX9voRmhz0EJzB130jCJ1iNi)
+Brain-GCD [Game Rececord](https://asciinema.org/a/GnWQCYP5ZHPa6xFOP7XMbR3h1)
