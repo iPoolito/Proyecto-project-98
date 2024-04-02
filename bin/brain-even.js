@@ -8,5 +8,5 @@ console.log('¡Bienvenido a Brain Games!');
 const userName = getUserName();
 isWin = evenOrPrimeGame('even', userName);
 if (isWin) {
-  console.log(`¡Felicitaciones, ${userName}!`);
+  console.log(`¡Felicidades, ${userName}!`);
 }

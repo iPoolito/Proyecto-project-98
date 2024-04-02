@@ -30,5 +30,5 @@ for (let i = 0; i < GAME_ROUNDS; i += 1) {
   console.log('¡Correcto!');
 }
 if (isWin) {
-  console.log(`¡Felicitaciones, ${userName}!`);
+  console.log(`¡Felicidades, ${userName}!`);
 }
