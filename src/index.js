@@ -4,7 +4,7 @@ export const GAME_ROUNDS = 3;
 
 export function isEven(number) {
   if (number % 2 === 0) {
-    return 'si';
+    return 'yes';
   }
   return 'no';
 }
@@ -89,7 +89,7 @@ export function evenOrPrimeGame(gameType, userName) {
   for (let i = 0; i < GAME_ROUNDS; i += 1) {
     const randomNumber = getRandomNumber(100);
     const correctAnswer = gameType === 'even' ? isEven(randomNumber) : isPrime(randomNumber);
-    const questionMessage = `Responde "si" si el número es ${gameType === 'even' ? 'par' : 'primo'}, de lo contrario responde "no".`;
+    const questionMessage = `Responde ${gameType === 'even' ? '"yes"' : '"si"'} si el número es ${gameType === 'even' ? 'par' : 'primo'}, de lo contrario responde "no".`;
     const userAnswer = getUserAnswer(questionMessage, randomNumber);
     if (!checkAnswer(userAnswer, correctAnswer, userName)) {
       return false;
