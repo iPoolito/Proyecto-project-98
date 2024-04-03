@@ -3,10 +3,16 @@ import readlineSync from 'readline-sync';
 export const GAME_ROUNDS = 3;
 
 export function isEven(number) {
-  if (number % 2 === 0) {
-    return 'yes';
+  if (number < 2) {
+    return 'no';
   }
-  return 'no';
+  const sqrtNumber = Math.sqrt(number);
+  for (let i = 2; i <= sqrtNumber; i += 1) {
+    if (number % i === 0) {
+      return 'no';
+    }
+  }
+  return 'yes';
 }
 
 export function isPrime(number) {
