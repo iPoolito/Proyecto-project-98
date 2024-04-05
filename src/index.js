@@ -25,3 +25,12 @@ export function runGame(rounds) {
     console.log(`¡Felicidades, ${userName}!`);
   }
 }
+
+export function createRounds(createRoundCallback) {
+  const rounds = [];
+  for (let i = 0; i < GAME_ROUNDS; i += 1) {
+    const round = createRoundCallback();
+    rounds.push(round);
+  }
+  runGame(rounds);
+}

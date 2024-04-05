@@ -1,4 +1,4 @@
-import { GAME_ROUNDS, runGame } from './index.js';
+import { createRounds } from './index.js';
 import { getRandomNumber } from './utils.js';
 
 function isPrime(number) {
@@ -21,10 +21,5 @@ const getRound = () => {
 };
 
 export default () => {
-  const rounds = [];
-  for (let i = 0; i < GAME_ROUNDS; i += 1) {
-    const round = getRound();
-    rounds.push(round);
-  }
-  runGame(rounds);
+  createRounds(getRound());
 };
