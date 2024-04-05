@@ -32,5 +32,5 @@ const getRound = () => {
 };
 
 export default () => {
-  createRounds(getRound());
+  createRounds(getRound);
 };
