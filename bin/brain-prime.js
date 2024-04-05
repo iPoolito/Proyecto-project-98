@@ -1,12 +1,4 @@
 #!/usr/bin/env node
-import getUserName from '../src/cli.js';
-import { evenOrPrimeGame } from '../src/index.js';
+import run from '../src/prime.js';
 
-let isWin = true;
-console.log('¡Bienvenido a Brain Games!');
-
-const userName = getUserName();
-isWin = evenOrPrimeGame('prime', userName);
-if (isWin) {
-  console.log(`¡Felicidades, ${userName}!`);
-}
+run();
