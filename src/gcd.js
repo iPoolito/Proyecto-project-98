@@ -1,6 +1,8 @@
 import { createRounds } from './index.js';
 import { getRandomNumber } from './utils.js';
 
+const questionMessage = 'Encuentra el máximo común divisor de los números dados.';
+
 function getGCD(a, b) {
   let num1 = a;
   let num2 = b;
@@ -18,7 +20,6 @@ const getRound = () => {
   const firstRandomNumber = getRandomNumber(20);
   const secondRandomNumber = getRandomNumber(20);
   const correctAnswer = getGCD(firstRandomNumber, secondRandomNumber);
-  const questionMessage = 'Encuentra el máximo común divisor de los números dados.';
   const questionValue = `${firstRandomNumber} ${secondRandomNumber}`;
   return {
     questionMessage, correctAnswer, questionValue, isNumberAnswer: true,
