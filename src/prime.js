@@ -27,7 +27,7 @@ function isPrimeRecursive(number, divider = 3) {
 const getRound = () => {
   const randomNumber = getRandomNumber(10);
   const correctAnswer = isPrime(randomNumber) ? 'yes' : 'no';
-  isPrimeRecursive();
+  isPrimeRecursive(randomNumber);
   return { questionMessage, correctAnswer, questionValue: randomNumber };
 };
 
