@@ -1,10 +1,15 @@
-import getUserName from './cli.js';
+import readlineSync from 'readline-sync';
 import { getUserAnswer, checkAnswer } from './utils.js';
 
 export const GAME_ROUNDS = 3;
 
+export function getUserName() {
+  const name = readlineSync.question('¿Cuál es tu nombre? ');
+  console.log(`¡Hola, ${name}!`);
+  return name;
+}
+
 export function runGame(rounds) {
-  let isWin = true;
   console.log('¡Bienvenido a Brain Games!');
 
   const userName = getUserName();
@@ -14,16 +19,10 @@ export function runGame(rounds) {
       questionMessage, correctAnswer, questionValue, isNumberAnswer,
     } = rounds[i];
     const userAnswer = getUserAnswer(questionMessage, questionValue, isNumberAnswer);
-    if (!checkAnswer(userAnswer, correctAnswer, userName)) {
-      isWin = false;
-      return;
-    }
+    if (!checkAnswer(userAnswer, correctAnswer, userName)) return;
     console.log('¡Correcto!');
   }
-
-  if (isWin) {
-    console.log(`¡Felicidades, ${userName}!`);
-  }
+  console.log(`¡Felicidades, ${userName}!`);
 }
 
 export function createRounds(createRoundCallback) {
