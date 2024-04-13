@@ -1,6 +1,8 @@
 import { createRounds } from './index.js';
 import { getRandomNumber } from './utils.js';
 
+const questionMessage = '¿Cuál es el resultado de la expresión?';
+
 function getRandomOperator() {
   const availableOperations = ['+', '-', '*'];
   const randomIndex = Math.floor(Math.random() * availableOperations.length);
@@ -14,8 +16,10 @@ export function getOperationResult(num1, num2, operator) {
       return num1 - num2;
     case '*':
       return num1 * num2;
-    default:
+    case '+':
       return num1 + num2;
+    default:
+      throw new Error('Operation no Available');
   }
 }
 
@@ -24,7 +28,7 @@ const getRound = () => {
   const secondRandomNumber = getRandomNumber(10);
   const randomOperator = getRandomOperator();
   const correctAnswer = getOperationResult(firstRandomNumber, secondRandomNumber, randomOperator);
-  const questionMessage = '¿Cuál es el resultado de la expresión?';
+
   const questionValue = `${firstRandomNumber} ${randomOperator} ${secondRandomNumber}`;
   return {
     questionMessage, correctAnswer, questionValue, isNumberAnswer: true,
