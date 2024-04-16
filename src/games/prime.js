@@ -3,18 +3,6 @@ import getRandomNumber from '../utils.js';
 
 const questionMessage = 'Responde "yes" si el número dado es primo. De lo contrario, responde "no".';
 
-function isPrime(number) {
-  if (number < 2) {
-    return false;
-  }
-  const sqrtNumber = Math.sqrt(number);
-  for (let i = 2; i <= sqrtNumber; i += 1) {
-    if (number % i === 0) {
-      return false;
-    }
-  }
-  return true;
-}
 // Reference that recursive function can be implement
 function isPrimeRecursive(number, divider = 3) {
   if (number === 2) return true;
@@ -26,8 +14,7 @@ function isPrimeRecursive(number, divider = 3) {
 
 const getRound = () => {
   const randomNumber = getRandomNumber(10);
-  const correctAnswer = isPrime(randomNumber) ? 'yes' : 'no';
-  isPrimeRecursive(randomNumber);
+  const correctAnswer = isPrimeRecursive(randomNumber) ? 'yes' : 'no';
   return { questionMessage, correctAnswer, questionValue: randomNumber };
 };
 
